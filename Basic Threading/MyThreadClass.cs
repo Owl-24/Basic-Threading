@@ -18,6 +18,8 @@ namespace Basic_Threading
                     Thread.Sleep(1500); 
                     attemptCount++;
                 }
+                int threadId = Thread.CurrentThread.ManagedThreadId;
+                Console.WriteLine($"The thread 0x{threadId} has exited with code 0 (0x0).");
             }
         }
     }
