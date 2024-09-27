@@ -17,8 +17,16 @@ namespace Basic_Threading
 
         public void StartThreads()
         {
-            Thread ThreadA = new Thread(MyThreadClass.Thread1.threading);
-            Thread ThreadB = new Thread(MyThreadClass.Thread1.threading);
+            Thread ThreadA = new Thread(MyThreadClass.Thread1.threading)
+            {
+                Name = "A"  
+            };
+            Thread ThreadB = new Thread(MyThreadClass.Thread1.threading)
+            {
+                Name = "B"  
+            };
+
+            Console.WriteLine("-Before starting threads-");
 
             ThreadA.Start();
             ThreadB.Start();
@@ -26,7 +34,8 @@ namespace Basic_Threading
             ThreadA.Join();
             ThreadB.Join();
 
-            MessageBox.Show("Both threads have finished execution."); 
+            Console.WriteLine("-End of Thread-");
+            label1.Text = "-End of Thread-";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,7 +45,6 @@ namespace Basic_Threading
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

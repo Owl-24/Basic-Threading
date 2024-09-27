@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Basic_Threading
 {
@@ -13,17 +9,16 @@ namespace Basic_Threading
         {
             public static void threading()
             {
+                Thread currentThread = Thread.CurrentThread;
+                string threadName = currentThread.Name;
                 int attemptCount = 0;
                 while (attemptCount < 6)
                 {
-                    Thread Thread1 = Thread.CurrentThread;
-                    Console.WriteLine("Name of Thread: " + Thread1 + " = " + attemptCount);
-                    Thread.Sleep(1500);
+                    Console.WriteLine("Name of Thread: Thread " + threadName + " Process = " + attemptCount);
+                    Thread.Sleep(1500); 
                     attemptCount++;
-                               
                 }
-
-            } 
+            }
         }
     }
 }
